@@ -1,0 +1,12 @@
+rust_library(
+    name = "config",
+    crate_root = "src/lib.rs",
+    edition = "2018",
+    srcs = glob(["src/**/*.rs"]),
+    deps = [
+        "//third-party:anyhow",
+        "//third-party:serde",
+        "//third-party:serde_json",
+        "//third-party:dirs",
+    ]
+)

@@ -1,0 +1,19 @@
+rust_library(
+    name = "rust",
+    crate_root = "binding_rust/lib.rs",
+    edition = "2021",
+    srcs = glob(["binding_rust/**/*.rs", "include/tree_sitter/parser.h"]),
+    deps = [
+        "//third-party:regex",
+        ":c"
+    ],
+    crate = "tree_sitter",
+    visibility = ["PUBLIC"],
+)
+
+cxx_library(
+    name = "c",
+    srcs = ["src/lib.c"],
+    public_include_directories = ["include"],
+    visibility = ["PUBLIC"],
+)
