@@ -1,0 +1,6 @@
+cxx_library(
+    name = "c",
+    srcs = ["src/lib.c"],
+    public_include_directories = ["include"], # NEW!
+    visibility = ["PUBLIC"],
+)
